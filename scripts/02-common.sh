@@ -1,7 +1,7 @@
 #!/bin/bash
 # Set variables
 mt4setup_url="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt4/mt4oldsetup.exe"
-mt4file="/config/.wine/drive_c/Program Files/MetaTrader/terminal.exe"
+mt4file="/config/.wine/drive_c/Program Files (x86)/MetaTrader 4/terminal.exe"
 wine_executable="wine"
 # metatrader_version="5.0.36"
 mt4server_port=18812
