@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [MetaTrader 5 Docker Setup](#metatrader-5-docker-setup)
+- [MetaTrader 4 Docker Setup](#metatrader-4-docker-setup)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Features](#features)
@@ -26,7 +26,7 @@ This project provides a Docker-based setup to run MetaTrader 4 (MT4) using Wine 
 
 ## Features
 
-- **Dockerized Environment:** Simplifies deployment and management of MT5.
+- **Dockerized Environment:** Simplifies deployment and management of MT4.
 - **Wine Compatibility:** Runs MetaTrader 4 on a Linux-based system.
 - **Traefik Integration:** Handles reverse proxying with automatic SSL certificate generation via Let's Encrypt.
 - **VNC Access:** Provides remote desktop access to the MT4 application.
@@ -60,7 +60,7 @@ This project provides a Docker-based setup to run MetaTrader 4 (MT4) using Wine 
    Open the `.env` file and set the necessary variables:
 
    ```env
-   # Backend - MT5
+   # Backend - MT4
    CUSTOM_USER=admin
    PASSWORD=yourpassword
    VNC_DOMAIN=your-vnc-domain.com
@@ -105,7 +105,7 @@ This project provides a Docker-based setup to run MetaTrader 4 (MT4) using Wine 
 ### Docker Compose Services
 
 - **Traefik:** Acts as a reverse proxy with HTTPS support.
-- **MT5:** Runs MetaTrader 4 using Wine.
+- **MT4:** Runs MetaTrader 4 using Wine.
 
 ### Volumes
 
@@ -115,9 +115,9 @@ This project provides a Docker-based setup to run MetaTrader 4 (MT4) using Wine 
 
 ## Usage
 
-1. **Accessing MetaTrader 5**
+1. **Accessing MetaTrader 4**
 
-   Navigate to `https://your-vnc-domain.com` in your web browser to access the VNC interface for MetaTrader 5.
+   Navigate to `https://your-vnc-domain.com` in your web browser to access the VNC interface for MetaTrader 4.
 
 2. **Traefik Dashboard**
 
@@ -160,7 +160,7 @@ Logs are managed per service and can be viewed using Docker commands or integrat
   - Ensure that ports `80` and `443` are open and not blocked by a firewall.
   - Verify that your domain DNS settings are correctly pointing to your server.
 
-- **MT5 Not Starting:**
+- **MT4 Not Starting:**
 
   - Check the logs of the `mt4` service for any installation errors.
   - Ensure that Wine dependencies are properly installed.
