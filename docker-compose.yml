@@ -55,10 +55,10 @@ services:
     networks:
       - traefik-public # Public network for Traefik and other services
 
-  mt5:
+  mt4:
     build:
       dockerfile: Dockerfile
-    container_name: mt5
+    container_name: mt4
     volumes:
       - ./config:/config
     networks:
@@ -72,18 +72,18 @@ services:
       traefik.enable: true
       traefik.docker.network: traefik-public
 
-      # Router for vnc.mt5.${domain} (Port 3000)
-      traefik.http.routers.vnc-mt5-http.rule: Host(`${VNC_DOMAIN}`)
-      traefik.http.routers.vnc-mt5-http.entrypoints: http
-      traefik.http.routers.vnc-mt5-http.middlewares: https-redirect
+      # Router for vnc.mt4.${domain} (Port 3000)
+      traefik.http.routers.vnc-mt4-http.rule: Host(`${VNC_DOMAIN}`)
+      traefik.http.routers.vnc-mt4-http.entrypoints: http
+      traefik.http.routers.vnc-mt4-http.middlewares: https-redirect
 
-      traefik.http.routers.vnc-mt5-https.rule: Host(`${VNC_DOMAIN}`)
-      traefik.http.routers.vnc-mt5-https.entrypoints: https
-      traefik.http.routers.vnc-mt5-https.tls: true
-      traefik.http.routers.vnc-mt5-https.tls.certresolver: le
-      traefik.http.routers.vnc-mt5-https.service: vnc-mt5-service
+      traefik.http.routers.vnc-mt4-https.rule: Host(`${VNC_DOMAIN}`)
+      traefik.http.routers.vnc-mt4-https.entrypoints: https
+      traefik.http.routers.vnc-mt4-https.tls: true
+      traefik.http.routers.vnc-mt4-https.tls.certresolver: le
+      traefik.http.routers.vnc-mt4-https.service: vnc-mt4-service
 
-      traefik.http.services.vnc-mt5-service.loadbalancer.server.port: 3000
+      traefik.http.services.vnc-mt4-service.loadbalancer.server.port: 3000
     depends_on:
       - traefik
 

@@ -48,8 +48,8 @@ RUN dos2unix /scripts/*.sh && \
     chmod +x /scripts/*.sh
 
 COPY /root /
-RUN touch /var/log/mt5_setup.log && \
-    chown abc:abc /var/log/mt5_setup.log && \
-    chmod 644 /var/log/mt5_setup.log
+RUN touch /var/log/mt4_setup.log && \
+    chown abc:abc /var/log/mt4_setup.log && \
+    chmod 644 /var/log/mt4_setup.log
 
 VOLUME /config
