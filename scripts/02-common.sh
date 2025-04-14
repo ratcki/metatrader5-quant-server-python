@@ -1,9 +1,9 @@
 #!/bin/bash
 # Set variables
 mt4setup_url="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt4/mt4setup.exe"
-mt4file="/config/.wine/drive_c/Program Files/MetaTrader 4/terminal.exe"
+mt4file="/config/.wine/drive_c/Program Files/MetaTrader/terminal64.exe"
 wine_executable="wine"
-metatrader_version="5.0.36"
+# metatrader_version="5.0.36"
 mt4server_port=18812
 
 # Function to show messages
