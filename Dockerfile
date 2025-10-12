@@ -12,7 +12,14 @@ RUN mkdir -p /config/.wine && \
     chmod -R 755 /config/.wine
 
 # Update package lists and upgrade packages
-RUN apt-get update && apt-get upgrade -y
+RUN if [ -f /etc/apt/sources.list ]; then \
+        sed -i '/backports/d' /etc/apt/sources.list; \
+    fi \
+    && if [ -d /etc/apt/sources.list.d ]; then \
+        find /etc/apt/sources.list.d -name '*backports*' -delete; \
+    fi \
+    && apt-get update \
+    && apt-get upgrade -y
 
 # Install required packages
 RUN apt-get install -y \
