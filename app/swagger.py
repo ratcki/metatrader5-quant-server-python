@@ -8,6 +8,7 @@ swagger_config = {
     "basePath": "/",
     "https": True,
     "schemes": [
+        "http",
         "https"
     ],
     "securityDefinitions": {
